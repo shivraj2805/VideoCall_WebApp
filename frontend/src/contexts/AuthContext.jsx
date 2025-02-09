@@ -2,17 +2,14 @@ import axios from "axios";
 import httpStatus from "http-status";
 import { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import server from "../environment";
+import server from "../environment";
 
 
 export const AuthContext = createContext({});
 
-let back_url = "https://videocall-webapp-backend.onrender.com" || "http://localhost:8000"; 
-
 const client = axios.create({
-    baseURL: `${back_url}/api/v1/users`
+    baseURL: `${server}/api/v1/users`
 })
-
 
 export const AuthProvider = ({ children }) => {
 

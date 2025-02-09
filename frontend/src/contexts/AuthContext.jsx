@@ -7,8 +7,10 @@ import { useNavigate } from "react-router-dom";
 
 export const AuthContext = createContext({});
 
+let back_url = "https://videocall-webapp-backend.onrender.com" || "http://localhost:8000"; 
+
 const client = axios.create({
-    baseURL: "http://localhost:8000/api/v1/users"
+    baseURL: `${back_url}/api/v1/users`
 })
 
 
